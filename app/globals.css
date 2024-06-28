@@ -4,7 +4,10 @@
 
 :root {
     --nav-index: 50;
-  }
+    --bg-shadow: 0 15px 40px -3px rgba(0, 0, 0, 0.04);
+    --bg-main-color: #6991d60d;
+    --bg-shadow-deep: 0 8px 20px rgba(0,0,0,.1),0 2px 8px rgba(0,0,0,.1);
+}
 
 body,
 html {
@@ -16,29 +19,57 @@ html {
     word-break: keep-all;
     word-wrap: break-word;
     font-size: 1rem;
+    height: -webkit-fill-available;
 }
 
 @layer base {
 }
 
 @layer components {
-    .p-container--default {
-        @apply max-w-[71.25rem] text-base;
+    .gfont {
+        font-family: GmarketSansMedium, Pretendard, sans-serif;
+        @apply flex items-center flex-col justify-between gap-[0.1rem] md:gap-[0.3rem] font-bold text-[#2e3033] text-[0.80rem];
+    }
+    .container--default {
+        @apply max-w-[71.25rem] text-base my-0 m-auto;
     }
 
-    .p-container {
+    .container {
         @apply w-full h-full m-auto;
     }
-    
-    .p-container--default>.p-container__inner {
-        @apply w-[92%] max-w-[calc(100%_-_48px)];
+
+    .container--default > .container__inner {
+        @apply w-[92%] max-w-[calc(100%_-_48px)] my-0 m-auto;
     }
 
-    .p-navbar {
-        @apply fixed z-[var(--nav-index)] w-full h-16 bg-[#fff] left-0;
+    .navbar {
+        @apply fixed z-[var(--nav-index)] w-full h-20 left-0;
     }
 
-    
+    .header {
+        @apply relative h-20;
+    }
+
+    .navbar--active {
+        @apply bg-[#fff] border border-[var(--bg-main-color)] md:mt-3 md:rounded-2xl shadow-[var(--bg-shadow)] transition-all duration-300 ease-in-out;
+    }
+
+    .navbar__menu {
+        @apply flex items-center px-2.5 py-1 m-0 h-full gap-[0.8rem] justify-between;
+    }
+    .navbar__item {
+        @apply whitespace-nowrap w-24 rounded-[34px] py-2 px-2 transition-all duration-300 ease-in-out;
+    }
+
+    .navbar__item.on {
+        @apply bg-[#e8f0fe] hover:bg-[#e8f0fe];
+    }
+
+    @screen md {
+        .navbar__item {
+            @apply hover:bg-[var(--bg-main-color)];
+        }
+    }
 }
 
 @layer utilities {
@@ -49,6 +80,56 @@ html {
         @apply opacity-100 translate-y-0;
     }
 
+    .color--gray {
+        fill: #666;
+    }
+    .profile__icon {
+        fill: #3182f6;
+    }
+
+    .profile__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        vertical-align: top;
+        background-color: rgb(218 233 253 / 40%);
+    }
+
+    .navbar__content {
+        display: flex;
+        max-height: 100%;
+        justify-content: space-between;
+        position: static;
+        width: auto;
+        transform: translate(0px);
+        max-width: 100%;
+        background: transparent;
+        box-shadow: none;
+        color: #000;
+        padding: 0;
+        line-height: normal;
+        min-height: 80px;
+    }
+    .navbar__content--bottom {
+        display: block;
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        width: 92%;
+        margin: 0 auto;
+        background: #fff;
+        box-shadow: 0 7px 12px rgba(0, 0, 0, 0.03), 4px 4px 28px rgba(0, 0, 0, 0.01);
+        border-radius: 40px;
+        text-align: center;
+        padding: 2px 0;
+        min-height: 56px;
+        z-index: 100;
+    }
     .modal_area {
         position: fixed;
         top: 0;
@@ -69,6 +150,53 @@ html {
         transition-property: opacity, visibility;
         transition-duration: 400ms, 0s;
     }
+
+    .header::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -180px;
+        height: 280px;
+        background: linear-gradient(180deg, #fff 120px, #f7f9fd 290px);
+        content: "";
+        pointer-events: none;
+    }
+
+    .body__wrap {
+        height: 100dvh;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropDownMenu{
+        background: #f2f2f2;
+    }
+
+
+.menu {
+    background: #fff;
+    border-radius: 8px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    padding: 10px;
+  }
+  
+  
+.menu--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
 @font-face {
@@ -142,4 +270,11 @@ html {
     src: url("../public/fonts/Pretendard-Black.eot");
     src: url("../public/fonts/Pretendard-Black.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-Black.woff2") format("woff2"), url("../public/fonts/Pretendard-Black.woff") format("woff"), url("../public/fonts/Pretendard-Black.ttf") format("truetype");
     font-display: swap;
+}
+
+@font-face {
+    font-family: "GmarketSansMedium";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
