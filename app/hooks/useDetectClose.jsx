@@ -1,24 +1,24 @@
 "use client";
 import { useEffect, useState } from "react";
 
-const useDetectClose = (elem, initialState) => {
+const useDetectClose = (ref, initialState) => {
   const [isOpen, setIsOpen] = useState(initialState);
 
   useEffect(() => {
-    const onClick = (e) => {
-      if (elem.current && !elem.current.contains(e.target)) {
-        setIsOpen(false);
+    const handleOutsideClick = (e) => {
+      if (ref.current && !ref.current.contains(e.target)) {
+        setIsOpen(!isOpen);
       }
     };
 
     if (isOpen) {
-      window.addEventListener("click", onClick);
+      window.addEventListener("click", handleOutsideClick);
     }
 
     return () => {
-      window.removeEventListener("click", onClick);
+      window.removeEventListener("click", handleOutsideClick);
     };
-  }, [isOpen, elem]);
+  }, [isOpen, ref]);
 
   return [isOpen, setIsOpen];
 };
