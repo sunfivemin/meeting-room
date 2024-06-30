@@ -198,9 +198,6 @@ html {
     background-color: #fff;
     box-shadow: var(--bg-shadow);
   }
-  /* 
-  .list__txt:before {
-  } */
 
   .list--open {
     opacity: 1;
