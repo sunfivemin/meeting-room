@@ -7,7 +7,6 @@ module.exports = {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
-
             boxShadow: {
                 "3xl": "0 8px 20px rgba(0,0,0,.05),0 2px 8px rgba(0,0,0,.05)",
             },
