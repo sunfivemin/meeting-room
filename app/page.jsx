@@ -5,22 +5,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 
+// 회의실 옵션 배열
 const roomOptions = ["회의실 1", "회의실 2", "회의실 3"];
 
 export default function Home() {
+    // 모달 열림 상태 관리
     const [isModalOpen, setIsModalOpen] = useState(false);
+    // 드롭다운 ref
     const dropDownRef = useRef();
+    // 드롭다운 열림 상태 감지 훅
     const [isOpen, setIsOpen] = useDetectClose(dropDownRef, false);
+    // 선택된 회의실 상태 관리
     const [selectedRoom, setSelectedRoom] = useState(roomOptions[0]);
 
+    // 모달 열기
     const handleClick = () => {
         setIsModalOpen(true);
     };
 
+    // 회의실 선택
     const handleRoomSelect = (room) => {
         setSelectedRoom(room);
-        setIsOpen(false);
+        setIsOpen(false); // 드롭다운 닫기
     };
+
+    // 모달 닫기
     const closeModal = () => {
         setIsModalOpen(false);
     };
@@ -65,6 +74,7 @@ export default function Home() {
                                             setIsOpen(!isOpen);
                                         }}>
                                         {selectedRoom}
+                                        {/* 드롭다운 화살표 아이콘 */}
                                         <span className={`${isOpen ? "rotate" : ""} absolute w-[20px] h-[12px] top-[13px] right-[13px] transition duration-300 ease-in-out`}>
                                             <svg width="20" height="10" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -74,10 +84,13 @@ export default function Home() {
                                             </svg>
                                         </span>
                                     </div>
+                                    {/* 드롭다운 목록 */}
                                     <ul role="tablist" className={`list__sort shadow-[var(--bg-shadow-border)] ${isOpen ? "list--open" : ""}`}>
+                                        {/* 회의실 옵션 매핑 */}
                                         {roomOptions.map((room, index) => (
                                             <li className="relative block h-10 pr-2 leading-8 text-left" role="presentation" key={index}>
                                                 <span className="before:content-[''] before:block before:w-12  inline-flex items-center" onClick={() => handleRoomSelect(room)}>
+                                                    {/* 선택된 회의실에 체크 아이콘 */}
                                                     {selectedRoom === room && (
                                                         <svg className="absolute left-6" width="15" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path
@@ -92,7 +105,7 @@ export default function Home() {
                                         ))}
                                     </ul>
                                 </div>
-                                {/* 최대 인원 */}
+                                {/* 최대 인원 표시 */}
                                 <div className="relative lg:before:hidden before:absolute before:bg-[#f0f2f5] before:left-0 before:top-0 before:bottom-0  h-[110px] lg:h-full before:content-[''] before:block before:w-[1px] before:h-[100%] gap-3 text-center lg:pl-3 lg:text-left flex__col">
                                     <p className="leading-5 font-semibold  text-[var(--text-dark-color)] text-[1.2rem] text-[#222]">최대 인원</p>
                                     <div className="">
@@ -107,14 +120,15 @@ export default function Home() {
                         <section className="flex__col items-center gap-8 flex-1 w-full bg-white h-[320px] md:w-1/2 lg:w-2/3 shadow-3xl rounded-lg ">
                             <div className="flex items-center">
                                 <div className="relative w-8 mr-8 h-11">
-                                    {/* comment : 사용 가능은 onair-on 붙여주세요! */}
+                                    {/* 사용 가능 상태를 나타내는 아이콘 / comment : 사용 가능은 onair-on 붙여주세요!*/}
+                                    {/*  */}
                                     <span className="onair onair-on"></span>
                                 </div>
-                                {/* comment : 사용 중, 사용 가능 */}
+                                {/* 회의실 사용 상태 텍스트 / comment : 사용 중, 사용 가능  */}
                                 {/* <p className="text-[1.6rem] lg:text-[2rem] font-extrabold text-[#333d4b] text-center leading-8">회의실 사용 중</p> */}
                                 <p className="text-[1.6rem] lg:text-[2rem] font-extrabold text-[#333d4b] text-center leading-8">회의실 사용 가능</p>
                             </div>
-                            {/* comment : 예약 가능, 예약 불가능 */}
+                            {/* 회의실 예약 가능 상태 텍스트 / comment : 예약 가능, 예약 불가능  */}
                             {/* <strong className="text-[1.2rem] lg:text-[1.4rem] font-bold text-[#6b7684] text-center leading-8">
                                 현재 <span className="text-[#333d4b]">{selectedRoom}</span>은 <span className="relative z-10 after:absolute text-[#333d4b] after:bg-[#F7DAD6] after:left-[-0.05rem] after:bottom-[-0.05rem] after:z-[-1] after:w-[101%] after:h-2">예약이 불가능</span>합니다.
                             </strong> */}
@@ -122,7 +136,7 @@ export default function Home() {
                                 <span className="text-[#333d4b]">현재 {selectedRoom}</span>는 <span className="relative z-10 after:absolute text-[#333d4b] after:bg-[#DDE5F7] after:left-[-0.05rem] after:bottom-[-0.05rem] after:z-[-1] after:w-[101%] after:h-2">예약이 가능</span>합니다.
                             </strong>
 
-                            {/*  comment : 사용 불가능 시 버튼 없애 주세요! */}
+                            {/* 예약 버튼  / comment : 사용 불가능 시 버튼 없애 주세요! */}
                             <button className="dark__btn " onClick={handleClick}>
                                 예약하기
                             </button>
@@ -191,8 +205,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* <Modal isOpen={isModalOpen} onClose={handleCloseModal}></Modal> */}
-            <ReservationModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} onClose={closeModal}  />
+            {/* 예약 모달 */}
+            <ReservationModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} onClose={closeModal} />
         </>
     );
 }
