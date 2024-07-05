@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --nav-index: 50;
+    --nav-index: 10;
     --bg-main-color: #6991d60d;
     --text-dark-color: #2e3033;
     --bg-shadow: 0 15px 40px -3px rgba(0, 0, 0, 0.04);
@@ -64,7 +64,7 @@ html {
     }
 
     .header {
-        @apply relative h-20;
+        @apply relative h-[60px] min-h-[60px] max-h-[60px] md:h-[80px] md:min-h-[80px] md:max-h-[80px];
     }
 
     .navbar--active {

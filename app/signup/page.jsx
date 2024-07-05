@@ -27,6 +27,7 @@ export default function Signup() {
                                     <input type="text" id="email3" placeholder="이메일" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm text-red-500 border border-red-500 rounded-lg outline-none bg-white/0 placeholder:text-red-500 "></input>
                                     <p className="mt-2 text-sm text-red-400">이메일이 일치하지 않습니다.</p>
                                 </div>
+                                
                                 {/* 이메일 인증하기 */}
                                 <button className="block w-full mt-3 mb-5 transition duration-300 ease-in-out font-md gray__btn">이메일 인증하기</button>
                                 {/* 이메일 인증하기  - 클릭 활성화*/}

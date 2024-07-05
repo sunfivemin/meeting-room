@@ -47,8 +47,8 @@ export default function Home() {
 
     return (
         <>
-            <section className="bg-[var(--bg-main-color)] flex-1">
-                <div className="mt-12 container--default">
+            <section className="bg-[var(--bg-main-color)] flex-1 mt-10">
+                <div className="container--default">
                     <div className="relative flex flex-wrap w-full gap-4 mb-8 container__inner">
                         <div className="flex__col gap-4 h-[320px] md:w-1/2 lg:w-1/3">
                             {/* section - 현재 시간 */}
@@ -108,7 +108,7 @@ export default function Home() {
 
                         {/* section - 시간 단위 예약 현황 */}
                         <section className="w-full bg-white shadow-3xl h-[520px] rounded-lg ">
-                            <div className="time-title">
+                            {/* <div className="time-title">
                                 <span className="text-[rgb(51,61,75)]">{selectedRoom}</span> <p>시간 단위 예약 현황</p>
                             </div>
                             <div className="time-wrap">
@@ -163,7 +163,7 @@ export default function Home() {
                                         <span className="time-box"></span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </section>
                     </div>
                 </div>
