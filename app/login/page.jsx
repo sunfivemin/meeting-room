@@ -5,7 +5,7 @@ export default function Login() {
     return (
         <>
             <div className="flex bg-[var(--bg-main-color)] flex-1 mt-[100px]">
-                <div className="z-10 w-full mt-[0px] pb-[110px] md:my-[0px] md:pb-[0px]">
+                <div className="z-10 w-full mt-[0px] pb-[110px] md:my-[0px] md:pb-[60px]">
                     <div className="p-10 py-[60px] mx-auto bg-white shadow-3xl rounded-lg px-6 md:px-8 md:w-3/4 lg:w-[600px] w-[92%]">
                         <h2 className="mb-10 text-2xl font-bold text-center text-[#222]">로그인</h2>
                         <form action="">
@@ -13,9 +13,7 @@ export default function Login() {
                                 <div className="relative flex flex-row justify-between"></div>
                                 {/* 이메일 입력 */}
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="text-sm font-bold text-navy-700 ">
-                                        이메일
-                                    </label>
+                                    <label className="text-sm font-bold text-navy-700 ">이메일</label>
 
                                     <input type="email" name="email" id="email" placeholder="이메일" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm border border-gray-300 rounded-lg outline-none bg-white/0"></input>
                                 </div>
@@ -36,9 +34,7 @@ export default function Login() {
                                 </div>
                                 {/* 비밀번호 입력 */}
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="text-sm font-bold text-navy-700 ">
-                                        비밀번호
-                                    </label>
+                                    <label className="text-sm font-bold text-navy-700 ">비밀번호</label>
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm border border-gray-300 rounded-lg outline-none bg-white/0"></input>
                                 </div>
                                 {/* 자동 로그인 체크박스 */}
