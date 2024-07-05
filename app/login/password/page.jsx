@@ -18,7 +18,7 @@ export default function Password() {
     return (
         <>
             <div className="flex bg-[var(--bg-main-color)] flex-1 items-center">
-                <div className="z-10 w-full mt-[0px] pb-[110px] md:my-[0px] md:pb-[0px]">
+                <div className="z-20 w-full mt-[0px] pb-[110px] md:my-[0px] md:pb-[0px]">
                     <div className="p-10 align-center justify-center mx-auto bg-white shadow-3xl rounded-lg px-6 md:px-8 md:w-3/4 lg:w-[600px] w-[92%]">
                         <h2 className="mb-3 text-2xl font-bold text-center text-[#222]">비밀번호 찾기</h2>
                         <p className="mb-10 text-sm text-center text-gray-500 font-nomal">가입하신 이메일 주소를 입력해주세요.</p>
