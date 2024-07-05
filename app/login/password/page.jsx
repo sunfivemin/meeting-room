@@ -11,9 +11,7 @@ export default function Password() {
         alert("확인버튼");
     };
 
-    // const handleCancel = () => {
-    //     alert("취소 버튼 클릭됨");
-    // };
+
 
     return (
         <>
@@ -43,22 +41,11 @@ export default function Password() {
                         <button className="block w-full p-3 font-bold font-md text-white bg-[#4e5968] rounded-lg mt-10" onClick={() => setIsModalOpen(true)}>
                             비밀번호 찾기
                         </button>
-                        <CommonModal
-                            open={isModalOpen}
-                            setOpen={setIsModalOpen}
-                            title="example@example.com 메일로 인증코드를 전송하였습니다."
-                            content="이메일이 수신되지 않는 경우 입력하신 이메일 주소가 정확한지 또는 스팸 메일함을 확인해주세요."
-                            onConfirm={handleConfirm}
-                            singleButton={true}
-                        />{" "}
+                        <CommonModal open={isModalOpen} setOpen={setIsModalOpen} title="example@example.com 메일로 인증코드를 전송하였습니다." content="이메일이 수신되지 않는 경우 입력하신 이메일 주소가 정확한지 또는 스팸 메일함을 확인해주세요." onConfirm={handleConfirm} singleButton={true} />
                     </div>
                 </div>
             </div>
-            {/* <button className="px-4 py-2 text-white bg-blue-500 rounded" onClick={() => setIsModalOpen(true)}>
-                two Modal
-            </button>
-            <CommonModal open={isModalOpen} setOpen={setIsModalOpen} title="인증코드를 재전송하였습니다." content="이메일이 수신되지 않는 경우 입력하신 이메일 주소가 정확한지 또는 스팸 메일함을 확인해주세요." onConfirm={handleConfirm} onCancel={handleCancel} />{" "}
-         */}
+          
         </>
     );
 }

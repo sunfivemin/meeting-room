@@ -1,12 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Signup() {
     return (
         <>
-            <div className="flex bg-[var(--bg-main-color)] flex-1 mt-[100px]">
-                <div className="z-10 w-full mt-[0px] pb-[110px] md:my-[0px] md:pb-[60px]">
-                    <div className="p-10 py-[60px] mx-auto bg-white shadow-3xl rounded-lg px-6 md:px-8 md:w-3/4 lg:w-[600px] w-[92%]">
+            <div className="flex bg-[var(--bg-main-color)] flex-1 lg:mt-[100px] mt-[0px] ">
+                <div className="z-10 w-full pb-[110px]">
+                    <div className="p-10 py-[60px] mx-auto bg-white shadow-3xl rounded-lg px-6 md:px-8 md:w-3/4 lg:w-[800px] w-[92%]">
                         <h2 className="mb-10 text-2xl font-bold text-center text-[#222]">회원가입</h2>
                         <form action="">
                             <div className="">
@@ -27,11 +26,26 @@ export default function Signup() {
                                     <input type="text" id="email3" placeholder="이메일" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm text-red-500 border border-red-500 rounded-lg outline-none bg-white/0 placeholder:text-red-500 "></input>
                                     <p className="mt-2 text-sm text-red-400">이메일이 일치하지 않습니다.</p>
                                 </div>
-                                
+
                                 {/* 이메일 인증하기 */}
                                 <button className="block w-full mt-3 mb-5 transition duration-300 ease-in-out font-md gray__btn">이메일 인증하기</button>
                                 {/* 이메일 인증하기  - 클릭 활성화*/}
                                 <button className="block w-full mt-3 mb-8 transition duration-300 ease-in-out font-md blue__btn">이메일 인증하기</button>
+
+                                {/* 인증 메일 전송 알림 */}
+                                <div className="w-full gap-2 px-5 pt-2 pb-5 mt-3 mb-5 text-sm border border-gray-200 rounded-lg bg-[#f7f9fa] outline-none flex__col bg-white/0">
+                                    <p className="flex justify-center mt-5 text-lg font-bold item-center text-center text-[#222]">example@example.com 으로 인증 메일을 보냈습니다.</p>
+                                    <p className="flex justify-center text-base font-semibold text-center text-gray-500 item-center">메일 인증 후 회원가입을 진행해보세요.</p>
+                                    <div className="flex flex-wrap items-center justify-center gap-1 mt-5">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                            <path
+                                                d="M0.25 7C0.25 10.7279 3.27208 13.75 7 13.75C10.7279 13.75 13.75 10.7279 13.75 7C13.75 3.27208 10.7279 0.25 7 0.25C3.27208 0.25 0.25 3.27208 0.25 7ZM13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7ZM7.125 3.75C7.47018 3.75 7.75 4.02982 7.75 4.375C7.75 4.72018 7.47018 5 7.125 5C6.77982 5 6.5 4.72018 6.5 4.375C6.5 4.02982 6.77982 3.75 7.125 3.75ZM6.65 10.5H7.58333V5.83333H6.65V10.5Z"
+                                                fill="#828C94"></path>
+                                        </svg>
+                                        <p className="font-semibold pr-1.5 text-gray-400 text-sm">이메일을 받지 못하셨나요?</p>
+                                        <button className="text-sm font-semibold text-gray-600 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">이메일 재전송하기</button>
+                                    </div>
+                                </div>
 
                                 {/* 비밀번호 입력 */}
                                 <div className="mb-3">
@@ -39,29 +53,23 @@ export default function Signup() {
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm border border-gray-300 rounded-lg outline-none bg-white/0"></input>
                                 </div>
                                 {/* 비밀번호 실패 */}
-                                <div className="mb-3">
-                                    <label className="text-sm font-bold text-navy-700 ">
-                                        비밀번호
-                                    </label>
+                                {/* <div className="mb-3">
+                                    <label className="text-sm font-bold text-navy-700 ">비밀번호</label>
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm text-red-500 border border-red-500 rounded-lg outline-none bg-white/0 placeholder:text-red-500 "></input>
                                     <p className="mt-2 text-sm text-red-400">영문, 숫자, 특수문자를 포함한 8자 이상의 비밀번호를 입력해주세요.</p>
-                                </div>
+                                </div> */}
 
                                 {/* 비밀번호 확인 */}
-                                <div className="mb-3">
-                                    <label className="text-sm font-bold text-navy-700 ">
-                                        비밀번호 확인
-                                    </label>
+                                {/* <div className="mb-3">
+                                    <label className="text-sm font-bold text-navy-700 ">비밀번호 확인</label>
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm border border-gray-300 rounded-lg outline-none bg-white/0"></input>
-                                </div>
+                                </div> */}
                                 {/* 비밀번호 확인 - 일치하지 않습니다. */}
-                                <div className="mb-3">
-                                    <label className="text-sm font-bold text-navy-700 ">
-                                        비밀번호 확인
-                                    </label>
+                                {/* <div className="mb-3">
+                                    <label className="text-sm font-bold text-navy-700 ">비밀번호 확인</label>
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm text-red-500 border border-red-500 rounded-lg outline-none bg-white/0 placeholder:text-red-500 "></input>
                                     <p className="mt-2 text-sm text-red-400">비밀번호가 일치하지 않습니다.</p>
-                                </div>
+                                </div> */}
 
                                 {/* 이름 입력 */}
                                 <div className="mb-3">
@@ -250,33 +258,38 @@ export default function Signup() {
                                         <input type="checkbox" id="terms-check-all" />
                                         <label htmlFor="terms-check-all">
                                             <span className="check-icon"></span>
-                                            <p className="!text-base 
-                                            !text-[#222] !font-semibold">전체동의</p>
+                                            <p
+                                                className="!text-base 
+                                            !text-[#222] !font-semibold">
+                                                전체동의
+                                            </p>
                                         </label>
                                     </div>
                                     <hr className="my-2"></hr>
                                     <div className="gap-1 flex__col ">
-                                        <div className="check-wrap">
+                                        <div className="flex flex-wrap check-wrap">
                                             <input type="checkbox" id="terms-check-01" />
                                             <label htmlFor="terms-check-01">
                                                 <span className="check-icon"></span>
                                                 <p className="!text-base flex items-center justify-center gap-x-2 gap-y-4 flex-wrap">
-                                                    <span className="text-[#222] font-semibold">필수</span><span className="pr-1">서비스 이용약관</span>  
+                                                    <span className="text-[#222] font-semibold">필수</span>
+                                                    <span className="pr-1">서비스 이용약관</span>
                                                 </p>
                                             </label>
                                             <span className="text-sm ml-2 gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
                                         </div>
-                                        <div className="check-wrap">
+                                        <div className="flex flex-wrap check-wrap">
                                             <input type="checkbox" id="terms-check-02" />
                                             <label htmlFor="terms-check-02">
                                                 <span className="check-icon"></span>
                                                 <p className="!text-base flex items-center gap-x-2 gap-y-4 flex-wrap">
-                                                    <span className="text-[#222] font-semibold ">필수</span><span>개인정보 수집 및 이용 동의서</span>  
+                                                    <span className="text-[#222] font-semibold ">필수</span>
+                                                    <span>개인정보 수집 및 이용 동의서</span>
                                                 </p>
                                             </label>
                                             <span className="text-sm ml-2 gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
                                         </div>
-                                        <div className="check-wrap">
+                                        <div className="flex flex-wrap check-wrap">
                                             <input type="checkbox" id="terms-check-03" />
                                             <label htmlFor="terms-check-03">
                                                 <span className="check-icon"></span>

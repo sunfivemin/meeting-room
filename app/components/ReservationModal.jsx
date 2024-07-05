@@ -309,7 +309,7 @@ export default function ReservationModal({ isModalOpen, onClose }) {
                     <label className="font-bold text-md text-navy-700">
                       참여자
                     </label>
-                    <ComboBox />
+        
                   </div>
 
                   <div className="col-span-2">

@@ -2,7 +2,7 @@ const CommonModal = ({ open, setOpen, title, subtitle, content, onConfirm, singl
     if (!open) return null;
 
     return (
-        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-40">
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black bg-opacity-40 px-[15px]">
             <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
                 <h2 className="mb-4 text-xl font-semibold text-center">{title}</h2>
                 {subtitle && <p className="mb-4 text-base text-gray-500">{subtitle}</p>}

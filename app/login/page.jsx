@@ -5,7 +5,7 @@ export default function Login() {
     return (
         <>
             <div className=" bg-[var(--bg-main-color)] flex-1 flex items-center">
-                <div className="z-10 flex w-full h-fit ">
+                <div className="z-10 flex w-full h-fit pb-[110px]">
                     <div className="p-10 mx-auto bg-white shadow-3xl rounded-lg px-6 md:px-8 md:w-3/4 lg:w-[500px] w-[92%]">
                         <h2 className="mb-10 text-2xl font-bold text-center text-[#222]">로그인</h2>
                         <form action="">
