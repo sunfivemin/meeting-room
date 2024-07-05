@@ -249,11 +249,8 @@ export default function Signup() {
                                         <input type="checkbox" id="terms-check-all" />
                                         <label htmlFor="terms-check-all">
                                             <span className="check-icon"></span>
-                                            <p
-                                                className="!text-base 
-                                            !text-[#222] !font-semibold">
-                                                전체동의
-                                            </p>
+                                            <p className="!text-base 
+                                            !text-[#222] !font-semibold">전체동의</p>
                                         </label>
                                     </div>
                                     <hr className="my-2"></hr>
@@ -262,9 +259,8 @@ export default function Signup() {
                                             <input type="checkbox" id="terms-check-01" />
                                             <label htmlFor="terms-check-01">
                                                 <span className="check-icon"></span>
-                                                <p className="!text-base">
-                                                    <span className="text-[#222] font-semibold pr-2">필수</span>
-                                                    <span className="pr-1">서비스 이용약관</span>
+                                                <p className="!text-base flex items-center justify-center gap-x-2 gap-y-4 flex-wrap">
+                                                    <span className="text-[#222] font-semibold">필수</span><span className="pr-1">서비스 이용약관</span>  <span className="text-sm gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
                                                 </p>
                                             </label>
                                         </div>
@@ -272,9 +268,8 @@ export default function Signup() {
                                             <input type="checkbox" id="terms-check-02" />
                                             <label htmlFor="terms-check-02">
                                                 <span className="check-icon"></span>
-                                                <p className="!text-base">
-                                                    <span className="text-[#222] font-semibold pr-2">필수</span>
-                                                    <span>개인정보 수집 및 이용 동의서</span>
+                                                <p className="!text-base flex items-center gap-x-2 gap-y-4 flex-wrap">
+                                                    <span className="text-[#222] font-semibold ">필수</span><span>개인정보 수집 및 이용 동의서</span>  <span className="text-sm gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
                                                 </p>
                                             </label>
                                         </div>
@@ -282,8 +277,8 @@ export default function Signup() {
                                             <input type="checkbox" id="terms-check-03" />
                                             <label htmlFor="terms-check-03">
                                                 <span className="check-icon"></span>
-                                                <p className="!text-base">
-                                                    <span className="pr-2 font-semibold text-gray-400">선택</span>
+                                                <p className="!text-base flex items-center justify-center gap-x-2 gap-y-4 flex-wrap">
+                                                    <span className="font-semibold text-gray-500 ">선택</span>
                                                     <span>마케팅 정보 수신 동의</span>
                                                 </p>
                                             </label>

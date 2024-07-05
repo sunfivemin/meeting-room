@@ -158,6 +158,10 @@ html {
         @apply absolute left-0 bottom-[0.5px] w-full h-[1px] bg-gray-600 hover:bg-[#4e5968d1] transition duration-300 ease-in-out;
     }
 
+    .underline-link.gray-b::after {
+        @apply  bg-gray-300 hover:bg-[#4e5968d1] bottom-[-1px];
+    }
+
     @screen md {
         .navbar__item {
             @apply hover:bg-[var(--bg-main-color)];
