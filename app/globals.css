@@ -3,389 +3,387 @@
 @tailwind utilities;
 
 :root {
-  --nav-index: 50;
-  --bg-main-color: #6991d60d;
-  --text-dark-color: #2e3033;
-  --bg-shadow: 0 15px 40px -3px rgba(0, 0, 0, 0.04);
-  --bg-shadow-deep: 0 8px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.1);
-  --bg-shadow-border: 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    --nav-index: 50;
+    --bg-main-color: #6991d60d;
+    --text-dark-color: #2e3033;
+    --bg-shadow: 0 15px 40px -3px rgba(0, 0, 0, 0.04);
+    --bg-shadow-deep: 0 8px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.1);
+    --bg-shadow-border: 0 0 2px 0 rgba(0, 0, 0, 0.12);
 }
 
 body,
 html {
-  font-family: Pretendard, -apple-system, Noto Sans KR, Roboto, sans-serif;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
-  word-break: keep-all;
-  word-wrap: break-word;
-  font-size: 1rem;
-  height: -webkit-fill-available;
+    font-family: Pretendard, -apple-system, Noto Sans KR, Roboto, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    word-break: keep-all;
+    word-wrap: break-word;
+    font-size: 1rem;
+    height: -webkit-fill-available;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  height: 10%;
-  border-radius: 20px;
-  /* background: #dbe5ff; */
-  background-color: rgba(0, 0, 0, 0.7);
-  background-clip: padding-box;
+    height: 10%;
+    border-radius: 20px;
+    /* background: #dbe5ff; */
+    background-color: rgba(0, 0, 0, 0.7);
+    background-clip: padding-box;
 }
 ::-webkit-scrollbar-track {
-  background: #fff;
-  border-radius: 50px;
+    background: #fff;
+    border-radius: 50px;
 }
 
 @layer base {
 }
 
 @layer components {
-  .gfont {
-    font-family: GmarketSansMedium, Pretendard, sans-serif;
-    @apply flex items-center flex-col justify-between gap-[0.1rem] md:gap-[0.3rem] font-bold text-[var(--text-dark-color)] text-[0.80rem];
-  }
-  .container--default {
-    @apply max-w-[71.25rem] text-base my-0 m-auto;
-  }
-
-  .container {
-    @apply w-full h-full m-auto;
-  }
-
-  .container--default > .container__inner {
-    @apply w-[92%] max-w-[calc(100%_-_48px)] my-0 m-auto;
-  }
-
-  .navbar {
-    @apply fixed z-[var(--nav-index)] w-full h-20 left-0;
-  }
-
-  .header {
-    @apply relative h-20;
-  }
-
-  .navbar--active {
-    @apply bg-[#fff] border border-[var(--bg-main-color)] md:mt-3 md:rounded-2xl shadow-[var(--bg-shadow)] transition-all duration-300 ease-in-out;
-  }
-
-  .navbar__menu {
-    @apply flex items-center px-2.5 py-1 m-0 h-full gap-[0.8rem] justify-between;
-  }
-  .navbar__item {
-    @apply whitespace-nowrap w-24 rounded-[34px] py-2 px-2 transition-all duration-300 ease-in-out;
-  }
-
-  .navbar__item.on {
-    @apply bg-[#e8f0fe] hover:bg-[#e8f0fe];
-  }
-
-  .flex__col {
-    @apply flex flex-col w-full justify-center text-left;
-  }
-
-  .tab__opt {
-    @apply relative inline-block pl-5 pr-11 h-10 font-semibold leading-9 align-top box-border border-solid border border-[#DBE5FF] bg-[#E6EDFF] text-[#4881F7] rounded-[20px];
-  }
-
-  .dark__btn {
-    @apply transition duration-300 ease-in-out flex items-center px-[5rem] py-3 mt-3 text-lg font-medium text-white bg-[#4e5968] rounded-md shadow-sm cursor-pointer hover:bg-[#4e5968d1];
-  }
-
-  .gray__btn {
-    @apply transition duration-300 ease-in-out flex items-center px-[5rem] py-3 mt-3 text-lg font-medium text-[#b0b8c1] bg-[#f0f2f5] rounded-md shadow-sm cursor-pointer hover:bg-[#dedfe2];
-  }
-
-  .time-container {
-    @apply flex flex-col items-center py-0 text-[#fff] px-3.5 justify-center flex-1 w-full gap-2 text-xl font-bold rounded-lg shadow-3xl;
-    background: rgba(39, 68, 230, 0.78);
-    /* background: #000ii; */
-    /* background: linear-gradient(rgba(238, 245, 255, 0), rgba(238, 242, 255, 1)); */
-
-    background: linear-gradient(
-      0deg,
-      #5f79d6 -4.26%,
-      #1631cbc7 -4.25%,
-      #7191e3 102%
-    );
-    letter-spacing: -0.25px;
-  }
-
-  .check-wrap {
-    @apply relative flex items-center;
-  }
-
-  .check-wrap input[type="checkbox"] {
-    @apply invisible absolute;
-  }
-
-  .check-wrap label {
-    @apply bg-white rounded-full cursor-pointer flex items-center h-7 relative;
-  }
-
-  .check-wrap label .check-icon {
-    @apply w-4 h-4 mr-1 bg-white border border-gray-300 rounded-[4px] flex-shrink-0 relative;
-  }
-
-  .check-wrap input[type="checkbox"]:checked + label .check-icon {
-    @apply bg-[#fff] border border-gray-500;
-  }
-
-  .check-wrap input[type="checkbox"]:checked + label .check-icon::after {
-    content: "";
-    @apply absolute left-[5px] top-[1.5px] w-[4px] h-[9px] border-solid border-gray-500 border-r border-b rotate-45 opacity-100 transition-opacity duration-300;
-  }
-
-  .check-wrap input[type="checkbox"] + label .check-icon::after {
-    @apply opacity-0;
-  }
-
-  .check-wrap input[type="checkbox"]:checked + label > p {
-    @apply font-semibold text-gray-500;
-  }
-
-  .check-wrap p {
-    @apply ml-1 text-sm text-gray-400;
-  }
-
-  .underline-link {
-    @apply relative;
-  }
-
-  .underline-link::after {
-    content: "";
-    @apply absolute left-0 bottom-[0.5px] w-full h-[1px] bg-gray-600;
-  }
-
-  @screen md {
-    .navbar__item {
-      @apply hover:bg-[var(--bg-main-color)];
+    .gfont {
+        font-family: GmarketSansMedium, Pretendard, sans-serif;
+        @apply flex items-center flex-col justify-between gap-[0.1rem] md:gap-[0.3rem] font-bold text-[var(--text-dark-color)] text-[0.80rem];
     }
-  }
+    .container--default {
+        @apply max-w-[71.25rem] text-base my-0 m-auto;
+    }
+
+    .container {
+        @apply w-full h-full m-auto;
+    }
+
+    .container--default > .container__inner {
+        @apply w-[92%] max-w-[calc(100%_-_48px)] my-0 m-auto;
+    }
+
+    .navbar {
+        @apply fixed z-[var(--nav-index)] w-full h-20 left-0;
+    }
+
+    .header {
+        @apply relative h-20;
+    }
+
+    .navbar--active {
+        @apply bg-[#fff] border border-[var(--bg-main-color)] md:mt-3 md:rounded-2xl shadow-[var(--bg-shadow)] transition-all duration-300 ease-in-out;
+    }
+
+    .navbar__menu {
+        @apply flex items-center px-2.5 py-1 m-0 h-full gap-[0.8rem] justify-between;
+    }
+    .navbar__item {
+        @apply whitespace-nowrap w-24 rounded-[34px] py-2 px-2 transition-all duration-300 ease-in-out;
+    }
+
+    .navbar__item.on {
+        @apply bg-[#E6EDFF] hover:bg-[#e8f0fe];
+    }
+
+    .flex__col {
+        @apply flex flex-col w-full justify-center text-left;
+    }
+
+    .tab__opt {
+        @apply relative inline-block pl-5 pr-11 h-10 font-semibold leading-9 align-top box-border border-solid border border-[#DBE5FF] bg-[#E6EDFF] text-[#4881F7] rounded-[20px];
+    }
+
+    .dark__btn {
+        @apply transition duration-300 ease-in-out flex items-center px-[5rem] py-3 mt-3 text-lg font-medium text-white bg-[#4e5968] rounded-md shadow-sm cursor-pointer hover:bg-[#4e5968d1];
+    }
+
+    .gray__btn {
+        @apply transition duration-300 ease-in-out flex items-center p-[0.4375rem] py-3 mt-3 font-semibold text-base text-[#b0b8c1] bg-[#f7f8fa] rounded-md cursor-pointer hover:bg-[#f0f2f5] border border-[#dadce0];
+    }
+
+    .blue__btn {
+        @apply transition duration-300 ease-in-out flex items-center p-[0.4375rem] py-3 mt-3 font-semibold text-base text-[#4881F7] bg-[#E6EDFF] rounded-md cursor-pointer hover:bg-[#d6e2ff] border border-[#DBE5FF];
+    }
+
+    .time-container {
+        @apply flex flex-col items-center py-0 text-[#fff] px-3.5 justify-center flex-1 w-full gap-2 text-xl font-bold rounded-lg shadow-3xl;
+        background: rgba(39, 68, 230, 0.78);
+        /* background: #000ii; */
+        /* background: linear-gradient(rgba(238, 245, 255, 0), rgba(238, 242, 255, 1)); */
+
+        background: linear-gradient(0deg, #5f79d6 -4.26%, #1631cbc7 -4.25%, #7191e3 102%);
+        letter-spacing: -0.25px;
+    }
+
+    .check-wrap {
+        @apply relative flex items-center pt-2;
+    }
+
+    .check-wrap input[type="checkbox"] {
+        @apply invisible absolute;
+    }
+
+    .check-wrap label {
+        @apply bg-white rounded-full cursor-pointer flex items-center h-7 relative;
+    }
+
+    .check-wrap label .check-icon {
+        @apply w-4 h-4 mr-1 bg-white border border-gray-300 rounded-[4px] flex-shrink-0 relative;
+    }
+
+    .check-wrap input[type="checkbox"]:checked + label .check-icon {
+        @apply bg-[#fff] border border-gray-500 transition duration-100 ease-in-out;
+    }
+
+    .check-wrap input[type="checkbox"]:checked + label .check-icon::after {
+        content: "";
+        @apply absolute left-[5px] top-[1px] w-[4px] h-[9px] border-solid border-gray-500 border-r border-b rotate-45 opacity-100 transition-opacity duration-300;
+    }
+
+    .check-wrap input[type="checkbox"] + label .check-icon::after {
+        @apply opacity-0;
+    }
+
+    .check-wrap input[type="checkbox"]:checked + label > p {
+        @apply font-semibold text-gray-500;
+    }
+
+    .check-wrap p {
+        @apply ml-1 text-sm text-gray-400 transition duration-100 ease-in-out;
+    }
+
+    .underline-link {
+        @apply relative;
+    }
+
+    .underline-link::after {
+        content: "";
+        @apply absolute left-0 bottom-[0.5px] w-full h-[1px] bg-gray-600 hover:bg-[#4e5968d1] transition duration-300 ease-in-out;
+    }
+
+    @screen md {
+        .navbar__item {
+            @apply hover:bg-[var(--bg-main-color)];
+        }
+    }
 }
 
 @layer utilities {
-  .animate-fade-in {
-    @apply opacity-0 translate-y-10 duration-500;
-  }
-  .animate-fade-in-active {
-    @apply opacity-100 translate-y-0;
-  }
-
-  @keyframes wave {
-    0% {
-      box-shadow: 0 0 0 0 rgba(255, 78, 51, 1);
+    .animate-fade-in {
+        @apply opacity-0 translate-y-10 duration-500;
     }
-    100% {
-      box-shadow: 0 0 0 12px rgba(255, 78, 51, 0);
+    .animate-fade-in-active {
+        @apply opacity-100 translate-y-0;
     }
-  }
 
-  @keyframes wave-on {
-    0% {
-      box-shadow: 0 0 0 0 rgba(221, 229, 247, 1);
+    @keyframes wave {
+        0% {
+            box-shadow: 0 0 0 0 rgba(255, 78, 51, 1);
+        }
+        100% {
+            box-shadow: 0 0 0 12px rgba(255, 78, 51, 0);
+        }
     }
-    100% {
-      box-shadow: 0 0 0 12px rgba(221, 229, 247, 0);
+
+    @keyframes wave-on {
+        0% {
+            box-shadow: 0 0 0 0 rgba(221, 229, 247, 1);
+        }
+        100% {
+            box-shadow: 0 0 0 12px rgba(221, 229, 247, 0);
+        }
     }
-  }
 
-  .onair {
-    width: 30px;
-    height: 30px;
-    background-color: #ff4e33;
-    border-radius: 50%;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    animation: wave 2s ease-out infinite;
-  }
+    .onair {
+        width: 30px;
+        height: 30px;
+        background-color: #ff4e33;
+        border-radius: 50%;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        animation: wave 2s ease-out infinite;
+    }
 
-  .onair-on {
-    background-color: #4881f7;
-    animation: wave-on 2s ease-out infinite;
-  }
+    .onair-on {
+        background-color: #4881f7;
+        animation: wave-on 2s ease-out infinite;
+    }
 
-  .color--gray {
-    fill: #666;
-  }
-  .profile__icon {
-    fill: #3182f6;
-  }
+    .color--gray {
+        fill: #666;
+    }
+    .profile__icon {
+        fill: #3182f6;
+    }
 
-  .profile__box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    vertical-align: top;
-    background-color: rgb(218 233 253 / 40%);
-  }
+    .profile__box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        vertical-align: top;
+        background-color: rgb(218 233 253 / 40%);
+    }
 
-  .navbar__content {
-    display: flex;
-    max-height: 100%;
-    justify-content: space-between;
-    position: static;
-    width: auto;
-    transform: translate(0px);
-    max-width: 100%;
-    background: transparent;
-    box-shadow: none;
-    color: #000;
-    padding: 0;
-    line-height: normal;
-    min-height: 80px;
-  }
-  .navbar__content--bottom {
-    display: block;
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 100%;
-    width: 92%;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0 7px 12px rgba(0, 0, 0, 0.03), 4px 4px 28px rgba(0, 0, 0, 0.01);
-    border-radius: 40px;
-    text-align: center;
-    padding: 2px 0;
-    min-height: 56px;
-    z-index: 100;
-  }
+    .navbar__content {
+        display: flex;
+        max-height: 100%;
+        justify-content: space-between;
+        position: static;
+        width: auto;
+        transform: translate(0px);
+        max-width: 100%;
+        background: transparent;
+        box-shadow: none;
+        color: #000;
+        padding: 0;
+        line-height: normal;
+        min-height: 80px;
+    }
+    .navbar__content--bottom {
+        display: block;
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        width: 92%;
+        margin: 0 auto;
+        background: #fff;
+        box-shadow: 0 7px 12px rgba(0, 0, 0, 0.03), 4px 4px 28px rgba(0, 0, 0, 0.01);
+        border-radius: 40px;
+        text-align: center;
+        padding: 2px 0;
+        min-height: 56px;
+        z-index: 100;
+    }
 
-  .header::before {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -180px;
-    height: 280px;
-    background: linear-gradient(180deg, #fff 120px, #f7f9fd 290px);
-    content: "";
-    pointer-events: none;
-  }
+    .header::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -180px;
+        height: 280px;
+        background: linear-gradient(180deg, #fff 120px, #f7f9fd 290px);
+        content: "";
+        pointer-events: none;
+    }
 
-  .body__wrap {
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    display: flex;
-    flex-direction: column;
-  }
+    .body__wrap {
+        height: 100dvh;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        display: flex;
+        flex-direction: column;
+    }
 
-  .drop__down {
-    position: relative;
-    background: #fff;
-  }
+    .drop__down {
+        position: relative;
+        background: #fff;
+    }
 
-  .rotate {
-    transform: rotate(180deg) translateY(6px);
-  }
+    .rotate {
+        transform: rotate(180deg) translateY(6px);
+    }
 
-  .list__sort {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-    width: 100%;
-    padding: 8px 0;
-    border-radius: 16px;
-    background-color: #fff;
+    .list__sort {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+        width: 100%;
+        padding: 8px 0;
+        border-radius: 16px;
+        background-color: #fff;
 
-    box-shadow: var(--bg-shadow);
-    z-index: 10;
-  }
+        box-shadow: var(--bg-shadow);
+        z-index: 10;
+    }
 
-  .list--open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+    .list--open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
-  .bodyscroll {
-    height: 100%;
-    min-height: 100%;
-    overflow: hidden;
-    touch-action: none;
-  }
+    .bodyscroll {
+        height: 100%;
+        min-height: 100%;
+        overflow: hidden;
+        touch-action: none;
+    }
 
-  .modal-area {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition-property: opacity, visibility;
-    transition-duration: 400ms, 0s;
-    /* overflow-y: scroll; */
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
+    .modal-area {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition-property: opacity, visibility;
+        transition-duration: 400ms, 0s;
+        /* overflow-y: scroll; */
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
 
-  .modal-opened {
-    opacity: 100;
-    visibility: visible;
-    transition-property: opacity, visibility;
-    transition-duration: 400ms, 0s;
-  }
+    .modal-opened {
+        opacity: 100;
+        visibility: visible;
+        transition-property: opacity, visibility;
+        transition-duration: 400ms, 0s;
+    }
 
-  .modal-sheet {
-    background: none rgb(255, 255, 255);
-    margin-top: 0px;
-    /* overflow: auto; */
-    position: fixed;
-    left: 50%;
-    bottom: 0px;
-    padding-top: 42px;
-    border-radius: 28px 28px 0px 0px;
-    /* overscroll-behavior: contain; */
-    opacity: 1;
-    z-index: 9999;
-    transition: transform 0.4s cubic-bezier(0.33, 0.45, 0, 1) 0s,
-      opacity 0.1s ease 0s;
-    transform: translate(-50%) translateY(0px);
-    max-width: 768px;
-    width: 100%;
-  }
+    .modal-sheet {
+        background: none rgb(255, 255, 255);
+        margin-top: 0px;
+        /* overflow: auto; */
+        position: fixed;
+        left: 50%;
+        bottom: 0px;
+        padding-top: 42px;
+        border-radius: 28px 28px 0px 0px;
+        /* overscroll-behavior: contain; */
+        opacity: 1;
+        z-index: 9999;
+        transition: transform 0.4s cubic-bezier(0.33, 0.45, 0, 1) 0s, opacity 0.1s ease 0s;
+        transform: translate(-50%) translateY(0px);
+        max-width: 768px;
+        width: 100%;
+    }
 
-  .modal-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .modal-header {
-    padding: 1.6rem 2rem;
-    min-height: 4rem;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-  }
-  .modal-header h3 {
-    display: flex;
-    align-items: center;
-  }
-  .modal-body {
-    overflow-y: scroll;
-    max-height: 75vh;
-    margin-bottom: 20px;
-    padding: 1rem 2rem 1rem 2rem;
-  }
-  /* .modal-body li {
+    .modal-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .modal-header {
+        padding: 1.6rem 2rem;
+        min-height: 4rem;
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+    }
+    .modal-header h3 {
+        display: flex;
+        align-items: center;
+    }
+    .modal-body {
+        overflow-y: scroll;
+        max-height: 75vh;
+        margin-bottom: 20px;
+        padding: 1rem 2rem 1rem 2rem;
+    }
+    /* .modal-body li {
         box-shadow: inset 0 -0.1rem 0 #d9e0e6;
         margin: 0;
         min-height: 5rem;
@@ -395,181 +393,144 @@ html {
         box-shadow: none;
     } */
 
-  input {
-    padding-right: 40px; /* 아이콘 공간 확보 */
-  }
+    input {
+        padding-right: 40px; /* 아이콘 공간 확보 */
+    }
 
-  .react-datepicker-wrapper {
-    width: 100%;
-  }
+    .react-datepicker-wrapper {
+        width: 100%;
+    }
 
-  .react-datepicker__input-container {
-    display: flex;
-    align-items: center;
-  }
+    .react-datepicker__input-container {
+        display: flex;
+        align-items: center;
+    }
 
-  .customHeaderContainer {
-    font-family: "Pretendard", serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    height: 100%;
-    margin-top: 2px;
-    padding: 0 3px 0 3px;
-  }
-  .month {
-    color: #222;
-    font-size: 16px;
+    .customHeaderContainer {
+        font-family: "Pretendard", serif;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f0f0f0;
+        height: 100%;
+        margin-top: 2px;
+        padding: 0 3px 0 3px;
+    }
+    .month {
+        color: #222;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .year {
+        background-color: #f0f0f0;
+        color: #222;
+        border: none;
+        font-size: 16px;
+        font-weight: 500;
+        padding-right: 5px;
+        cursor: pointer;
+        padding-left: 5px;
+    }
+
+    .monthButton {
+        width: 34px;
+        height: 34px;
+        padding: 5px;
+        border-radius: 50%;
+    }
+
+    .monthButton:hover {
+        background-color: rgba(#222, 0.08);
+    }
+    .monthButton:disabled {
+        cursor: default;
+    }
+
+    .react-datepicker {
+        font-family: "Pretendard", serif;
+        border: none;
+        border-radius: 0;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 100;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-Thin.eot");
+    src: url("../public/fonts/Pretendard-Thin.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-Thin.woff2") format("woff2"), url("../public/fonts/Pretendard-Thin.woff") format("woff"), url("../public/fonts/Pretendard-Thin.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 200;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-ExtraLight.eot");
+    src: url("../public/fonts/Pretendard-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-ExtraLight.woff2") format("woff2"), url("../public/fonts/Pretendard-ExtraLight.woff") format("woff"), url("../public/fonts/Pretendard-ExtraLight.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 300;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-Light.eot");
+    src: url("../public/fonts/Pretendard-Light.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-Light.woff2") format("woff2"), url("../public/fonts/Pretendard-Light.woff") format("woff"), url("../public/fonts/Pretendard-Light.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 400;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-Regular.eot");
+    src: url("../public/fonts/Pretendard-Regular.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-Regular.woff2") format("woff2"), url("../public/fonts/Pretendard-Regular.woff") format("woff"), url("../public/fonts/Pretendard-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
     font-weight: 500;
-  }
-
-  .year {
-    background-color: #f0f0f0;
-    color: #222;
-    border: none;
-    font-size: 16px;
-    font-weight: 500;
-    padding-right: 5px;
-    cursor: pointer;
-    padding-left: 5px;
-  }
-
-  .monthButton {
-    width: 34px;
-    height: 34px;
-    padding: 5px;
-    border-radius: 50%;
-  }
-
-  .monthButton:hover {
-    background-color: rgba(#222, 0.08);
-  }
-  .monthButton:disabled {
-    cursor: default;
-  }
-
-  .react-datepicker {
-    font-family: "Pretendard", serif;
-    border: none;
-    border-radius: 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  }
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-Medium.eot");
+    src: url("../public/fonts/Pretendard-Medium.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-Medium.woff2") format("woff2"), url("../public/fonts/Pretendard-Medium.woff") format("woff"), url("../public/fonts/Pretendard-Medium.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 600;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-SemiBold.eot");
+    src: url("../public/fonts/Pretendard-SemiBold.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-SemiBold.woff2") format("woff2"), url("../public/fonts/Pretendard-SemiBold.woff") format("woff"), url("../public/fonts/Pretendard-SemiBold.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 700;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-Bold.eot");
+    src: url("../public/fonts/Pretendard-Bold.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-Bold.woff2") format("woff2"), url("../public/fonts/Pretendard-Bold.woff") format("woff"), url("../public/fonts/Pretendard-Bold.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 800;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-ExtraBold.eot");
+    src: url("../public/fonts/Pretendard-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-ExtraBold.woff2") format("woff2"), url("../public/fonts/Pretendard-ExtraBold.woff") format("woff"), url("../public/fonts/Pretendard-ExtraBold.ttf") format("truetype");
+    font-display: swap;
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 900;
+    font-style: normal;
+    src: url("../public/fonts/Pretendard-Black.eot");
+    src: url("../public/fonts/Pretendard-Black.eot?#iefix") format("embedded-opentype"), url("../public/fonts/Pretendard-Black.woff2") format("woff2"), url("../public/fonts/Pretendard-Black.woff") format("woff"), url("../public/fonts/Pretendard-Black.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Pretendard";
-  font-weight: 100;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-Thin.eot");
-  src: url("../public/fonts/Pretendard-Thin.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-Thin.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-Thin.woff") format("woff"),
-    url("../public/fonts/Pretendard-Thin.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 200;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-ExtraLight.eot");
-  src: url("../public/fonts/Pretendard-ExtraLight.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-ExtraLight.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-ExtraLight.woff") format("woff"),
-    url("../public/fonts/Pretendard-ExtraLight.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 300;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-Light.eot");
-  src: url("../public/fonts/Pretendard-Light.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-Light.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-Light.woff") format("woff"),
-    url("../public/fonts/Pretendard-Light.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-Regular.eot");
-  src: url("../public/fonts/Pretendard-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-Regular.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-Regular.woff") format("woff"),
-    url("../public/fonts/Pretendard-Regular.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 500;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-Medium.eot");
-  src: url("../public/fonts/Pretendard-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-Medium.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-Medium.woff") format("woff"),
-    url("../public/fonts/Pretendard-Medium.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 600;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-SemiBold.eot");
-  src: url("../public/fonts/Pretendard-SemiBold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-SemiBold.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-SemiBold.woff") format("woff"),
-    url("../public/fonts/Pretendard-SemiBold.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 700;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-Bold.eot");
-  src: url("../public/fonts/Pretendard-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-Bold.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-Bold.woff") format("woff"),
-    url("../public/fonts/Pretendard-Bold.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 800;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-ExtraBold.eot");
-  src: url("../public/fonts/Pretendard-ExtraBold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-ExtraBold.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-ExtraBold.woff") format("woff"),
-    url("../public/fonts/Pretendard-ExtraBold.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pretendard";
-  font-weight: 900;
-  font-style: normal;
-  src: url("../public/fonts/Pretendard-Black.eot");
-  src: url("../public/fonts/Pretendard-Black.eot?#iefix")
-      format("embedded-opentype"),
-    url("../public/fonts/Pretendard-Black.woff2") format("woff2"),
-    url("../public/fonts/Pretendard-Black.woff") format("woff"),
-    url("../public/fonts/Pretendard-Black.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "GmarketSansMedium";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
 }
