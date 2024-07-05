@@ -261,18 +261,20 @@ export default function Signup() {
                                             <label htmlFor="terms-check-01">
                                                 <span className="check-icon"></span>
                                                 <p className="!text-base flex items-center justify-center gap-x-2 gap-y-4 flex-wrap">
-                                                    <span className="text-[#222] font-semibold">필수</span><span className="pr-1">서비스 이용약관</span>  <span className="text-sm gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
+                                                    <span className="text-[#222] font-semibold">필수</span><span className="pr-1">서비스 이용약관</span>  
                                                 </p>
                                             </label>
+                                            <span className="text-sm ml-2 gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
                                         </div>
                                         <div className="check-wrap">
                                             <input type="checkbox" id="terms-check-02" />
                                             <label htmlFor="terms-check-02">
                                                 <span className="check-icon"></span>
                                                 <p className="!text-base flex items-center gap-x-2 gap-y-4 flex-wrap">
-                                                    <span className="text-[#222] font-semibold ">필수</span><span>개인정보 수집 및 이용 동의서</span>  <span className="text-sm gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
+                                                    <span className="text-[#222] font-semibold ">필수</span><span>개인정보 수집 및 이용 동의서</span>  
                                                 </p>
                                             </label>
+                                            <span className="text-sm ml-2 gray-b font-semibold text-gray-400 underline-link transition duration-300 ease-in-out hover:text-[#4e5968d1] ">내용보기</span>
                                         </div>
                                         <div className="check-wrap">
                                             <input type="checkbox" id="terms-check-03" />

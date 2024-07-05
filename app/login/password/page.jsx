@@ -46,8 +46,7 @@ export default function Password() {
                         <CommonModal
                             open={isModalOpen}
                             setOpen={setIsModalOpen}
-                            title="example@example.com 메일로 
-인증코드를 전송하였습니다."
+                            title="example@example.com 메일로 인증코드를 전송하였습니다."
                             content="이메일이 수신되지 않는 경우 입력하신 이메일 주소가 정확한지 또는 스팸 메일함을 확인해주세요."
                             onConfirm={handleConfirm}
                             singleButton={true}
