@@ -39,7 +39,7 @@ export default function Signup() {
                                 </div>
                                 {/* 비밀번호 실패 */}
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="text-sm font-bold text-navy-700 ">
+                                    <label className="text-sm font-bold text-navy-700 ">
                                         비밀번호
                                     </label>
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm text-red-500 border border-red-500 rounded-lg outline-none bg-white/0 placeholder:text-red-500 "></input>
@@ -48,14 +48,14 @@ export default function Signup() {
 
                                 {/* 비밀번호 확인 */}
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="text-sm font-bold text-navy-700 ">
+                                    <label className="text-sm font-bold text-navy-700 ">
                                         비밀번호 확인
                                     </label>
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm border border-gray-300 rounded-lg outline-none bg-white/0"></input>
                                 </div>
                                 {/* 비밀번호 확인 - 일치하지 않습니다. */}
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="text-sm font-bold text-navy-700 ">
+                                    <label className="text-sm font-bold text-navy-700 ">
                                         비밀번호 확인
                                     </label>
                                     <input type="password" name="password" id="password" placeholder="비밀번호" className="flex items-center justify-center w-full h-12 p-3 mt-2 text-sm text-red-500 border border-red-500 rounded-lg outline-none bg-white/0 placeholder:text-red-500 "></input>
